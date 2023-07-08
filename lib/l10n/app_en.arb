@@ -1,0 +1,56 @@
+{
+    "test": "English test",
+    "@test":{
+        "description":"The test"
+    },
+
+    "edit" : "Edit",
+    "delete" : "Delete",
+
+    "setting" : "Setting",
+    "passcodeLogin": "Login with password",
+    "security": "Security",
+    "language": "Language",
+    "resetApp": "Delete all data",
+    "logout": "Logout",
+    "changeName": "Change Name",
+    "changePass": "Change Password",
+    "oldPassword" : "Old password",
+    "newName" : "New name",
+    "newPassword" : "New password",
+
+    "income" : "Income",
+    "incomeDetails" : "Income Details",
+
+    "today" : "Today",
+
+    "outcome" : "Outcome",
+    "outcomeDetails" : "Outcome Details",
+
+    "totalBalance" : "Total balance",
+
+    "saving" : "Saving",
+    "addTargetMoney" : "Add Money",
+    "editSaving" : "Edit",
+    "deleteSaving": "Delete",
+    "savingDetails" : "Saving Details",
+    "targetName" : "Target name : ",
+    "targetPrice" : "Target price : ",
+    "reamaining" : "Reamaining : ",
+    "editTarget" : "Edit Target",
+    "savingHistory" : "Saving History",
+    "add" : "Add",
+    "dywtrp" : "Do you want to delete all data ?",
+    "dywtlo" : "Do you want to logout ?",
+    "dywtd" : "Do you want to delete ?",
+    "per_fin" : "Personal Finance",
+    "cal" : "Calculator",
+    "about" : "About",
+    "youIn" : "You can record your incomes and expenditures.",
+    "andCat" : "And also can categorize not only income types",
+    "butExp" : "but also expenditure types. If you have any plan",
+    "toTake" : "to take a trip or something, you can set cash",
+    "targe" : "target for it. In the settings menu, you can",
+    "chglan" : "change language, reset the app and Logout the",
+    "app" : "app." 
+}
