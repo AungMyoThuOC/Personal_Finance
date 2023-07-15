@@ -224,7 +224,7 @@ class SavingDataCard extends StatelessWidget {
                       child: const Text(
                         "Delete",
                         style: TextStyle(
-                          fontSize: 12,
+                          fontSize: 15,
                           color: Color(0xFFFF1818),
                         ),
                       ),
@@ -405,7 +405,7 @@ class SavingDataCard extends StatelessWidget {
                     ),
                   ),
                   barRadius: const Radius.circular(16),
-                  progressColor: Colors.blue[400],
+                  progressColor: Colors.grey,
                   backgroundColor: Colors.grey[300],
                 )
               ],
