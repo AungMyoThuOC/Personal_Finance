@@ -68,7 +68,7 @@ class DefaultFirebaseOptions {
     projectId: 'finance-3d01b',
     storageBucket: 'finance-3d01b.appspot.com',
     iosClientId: '931872682599-st5061ma3aqrv8h9kn4c8liqk866umgk.apps.googleusercontent.com',
-    iosBundleId: 'com.example.personalFinance',
+    iosBundleId: 'com.tastysoftcloud.personalFinance',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
@@ -78,6 +78,6 @@ class DefaultFirebaseOptions {
     projectId: 'finance-3d01b',
     storageBucket: 'finance-3d01b.appspot.com',
     iosClientId: '931872682599-st5061ma3aqrv8h9kn4c8liqk866umgk.apps.googleusercontent.com',
-    iosBundleId: 'com.example.personalFinance',
+    iosBundleId: 'com.tastysoftcloud.personalFinance',
   );
 }

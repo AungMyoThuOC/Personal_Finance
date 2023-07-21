@@ -1,4 +1,4 @@
-package com.example.personal_finance
+package com.tastysoftcloud.personal_finance
 
 import io.flutter.embedding.android.FlutterActivity
 
