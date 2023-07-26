@@ -34,7 +34,7 @@ class _AboutState extends State<About> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
-                      "images/budget.png",
+                      "images/app_logo.png",
                       width: 200,
                       height: 150,
                     ),
@@ -45,7 +45,7 @@ class _AboutState extends State<About> {
                 ),
                 Text(
                   // "Personal Finance",
-                  translation(context).per_fin,
+                  translation(context).fin,
                   style: const TextStyle(
                     fontSize: 25,
                     color: Color(0xFF3b3b3b),

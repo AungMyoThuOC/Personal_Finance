@@ -40,7 +40,7 @@ class _FrontScreenState extends State<FrontScreen> {
                 Expanded(
                   child: Center(
                     child: Image.asset(
-                      'images/budget.png',
+                      'images/app_logo.png',
                       width: 240,
                       height: 240,
                     ),

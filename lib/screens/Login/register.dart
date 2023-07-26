@@ -285,7 +285,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                       : const Padding(
                                           padding: EdgeInsets.all(10.0),
                                           child: Text(
-                                            'Sign up',
+                                            'Register',
                                           ),
                                         ),
                                 ),

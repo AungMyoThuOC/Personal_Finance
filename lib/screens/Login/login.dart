@@ -291,7 +291,7 @@ class _MyLogInPageState extends State<MyLogInPage> {
                                           ),
                                         )
                                       : const Text(
-                                          'SignIn',
+                                          'Login',
                                         ),
                                 ),
                               ),
@@ -325,7 +325,7 @@ class _MyLogInPageState extends State<MyLogInPage> {
                                         MaterialTapTargetSize.shrinkWrap,
                                     alignment: Alignment.centerLeft),
                                 child: Text(
-                                  "Signup",
+                                  "Register",
                                   style: TextStyle(
                                     fontWeight: FontWeight.w500,
                                     color: Colors.blue[600],
