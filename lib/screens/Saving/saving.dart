@@ -65,7 +65,9 @@ class _SavingState extends State<Saving> {
         title: Text(
           AppLocalizations.of(context)!.saving,
           style: const TextStyle(
-            fontSize: 15,
+            // fontSize: 15,
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
           ),
         ),
         actions: [

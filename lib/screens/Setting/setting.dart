@@ -232,7 +232,8 @@ class _SettingState extends State<Setting> {
           child: Text(
             AppLocalizations.of(context)!.setting,
             style: const TextStyle(
-              fontWeight: FontWeight.w600,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
             ),
           ),
         ),

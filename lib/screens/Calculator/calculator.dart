@@ -71,6 +71,7 @@ class _CalcButtonState extends State<CalcButton> {
           // "Calculator",
           AppLocalizations.of(context)!.cal,
           style: const TextStyle(
+            fontWeight: FontWeight.bold,
             color: Colors.white,
           ),
         ),

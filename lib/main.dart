@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:personal_finance/provider/locale_provider.dart';
+import 'package:personal_finance/screens/Login/reset_pw.dart';
+import 'package:personal_finance/screens/Login/reset_pw2.dart';
 // import 'package:personal_finance/screens/change_pw.dart';
 import 'package:personal_finance/screens/check_screen.dart';
 import 'package:personal_finance/screens/home.dart';
@@ -80,8 +82,8 @@ class _MyAppState extends State<MyApp> {
               '/': (context) => const FrontScreen(),
               '/login': (context) => const MyLogInPage(),
               '/register': (context) => const RegisterPage(),
-              // '/reset': (context) => const ResetPassword(),
-              // '/reset2': (context) => const ResetPassword2(),
+              '/reset': (context) => const ResetPassword(),
+              '/reset2': (context) => const ResetPassword2(),
               '/main': (context) => const Mainpage(),
               // '/changepassword': (context) => const ChangePw(),
               '/checkScreen': (context) => const checkScreen(),

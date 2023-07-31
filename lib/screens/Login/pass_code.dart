@@ -84,24 +84,26 @@ class _MyPasscodeState extends State<MyPasscode> {
                           labelStyle: TextStyle(color: Colors.grey[800]),
                         ),
                       ),
-                      // Container(
-                      //   width: MediaQuery.of(context).size.width,
-                      //   alignment: Alignment.topRight,
-                      //   child: TextButton(
-                      //     onPressed: () {
-                      //       Navigator.pushReplacementNamed(context, '/reset2');
-                      //     },
-                      //     child: Text(
-                      //       'forget password ? ',
-                      //       textAlign: TextAlign.left,
-                      //       style: TextStyle(
-                      //           color: Colors.blue[700], fontSize: 12),
-                      //     ),
-                      //   ),
-                      // ),
-                      const SizedBox(
-                        height: 15,
+                      Container(
+                        width: MediaQuery.of(context).size.width,
+                        alignment: Alignment.topRight,
+                        child: TextButton(
+                          onPressed: () {
+                            Navigator.pushReplacementNamed(context, '/reset2');
+                          },
+                          child: Text(
+                            'forget password ? ',
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              color: Colors.blue[700],
+                              fontSize: 12,
+                            ),
+                          ),
+                        ),
                       ),
+                      // const SizedBox(
+                      //   height: 15,
+                      // ),
                       SizedBox(
                         width: double.infinity,
                         height: 50,

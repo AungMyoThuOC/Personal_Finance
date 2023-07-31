@@ -103,7 +103,9 @@ class _RegisterPageState extends State<RegisterPage> {
                                 ),
                                 decoration: InputDecoration(
                                   hintText: "Enter your name",
-                                  hintStyle: const TextStyle(fontSize: 12),
+                                  hintStyle: const TextStyle(
+                                    fontSize: 12,
+                                  ),
                                   labelStyle: TextStyle(
                                     color: Colors.grey[800],
                                   ),
@@ -199,7 +201,8 @@ class _RegisterPageState extends State<RegisterPage> {
                                         isloading = true;
                                       });
                                       try {
-                                        final auth = FirebaseAuth.instance;
+                                        //need
+                                        // final auth = FirebaseAuth.instance;
                                         final newUser = await auth
                                             .createUserWithEmailAndPassword(
                                           email: userregistController.text,
@@ -210,32 +213,40 @@ class _RegisterPageState extends State<RegisterPage> {
                                             .updateDisplayName(
                                           nameregistController.text,
                                         );
-                                        SharedPreferences prefs =
-                                            await SharedPreferences
-                                                .getInstance();
-
-                                        prefs.setString(
-                                          'UserID',
-                                          newUser.user!.uid,
+                                        //Nneed
+                                        auth.currentUser!
+                                            .sendEmailVerification();
+                                        showSnackbar(
+                                          context,
+                                          'We sent Verification email to "${userregistController.text}"',
+                                          2,
+                                          Colors.green[300],
                                         );
-                                        // auth.currentUser!
-                                        //     .sendEmailVerification();
-                                        // showSnackbar(
-                                        //   context,
-                                        //   ' We sent Verification email to "${userregistController.text}"',
-                                        //   4,
-                                        //   Colors.green[300],
-                                        // );
-
+                                        Navigator.pushNamed(context, '/login');
+                                        userregistController.clear();
+                                        passwordregistController.clear();
                                         setState(() {
                                           isloading = false;
-                                          Navigator.pushNamed(
-                                            context,
-                                            '/login',
-                                          );
-                                          userregistController.clear();
-                                          passwordregistController.clear();
                                         });
+                                        // need
+                                        // SharedPreferences prefs =
+                                        //     await SharedPreferences
+                                        //         .getInstance();
+
+                                        // prefs.setString(
+                                        //   'UserID',
+                                        //   newUser.user!.uid,
+                                        // );
+
+                                        // setState(() {
+                                        //   isloading = false;
+                                        //   Navigator.pushNamed(
+                                        //     context,
+                                        //     '/login',
+                                        //   );
+                                        //   userregistController.clear();
+                                        //   passwordregistController.clear();
+                                        // });
                                       } on FirebaseAuthException catch (e) {
                                         String errorMessage = "";
                                         String code = e.code;

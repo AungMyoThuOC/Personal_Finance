@@ -5,6 +5,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:personal_finance/components/snackbar.dart';
+import 'package:personal_finance/model/firebaseservice.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 
@@ -34,6 +35,41 @@ class _MyLogInPageState extends State<MyLogInPage> {
       print('time reached');
     }),
   );
+
+  //Nneed
+  Future<void> checkEmail() async {
+    currentUser = auth.currentUser!;
+    mytime;
+    await currentUser.reload();
+
+    if (currentUser.emailVerified) {
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+
+      prefs.setString("password", passwordcontroller.text);
+      prefs.setString("displayName", "${currentUser.displayName}");
+      prefs.setString("email", usernamecontroller.text);
+      prefs.setInt('language', 1);
+      setState(() {
+        isloading = false;
+
+        usernamecontroller.clear();
+        passwordcontroller.clear();
+        mytime.cancel();
+        currentUser.reload();
+        Navigator.pushReplacementNamed(context, "/main");
+      });
+    } else {
+      showSnackbar(
+        context,
+        "Email has not been verified",
+        2,
+        Colors.red[300],
+      );
+      setState(() {
+        isloading = false;
+      });
+    }
+  }
 
   final emialValidator = MultiValidator([
     RequiredValidator(errorText: 'Email is required'),
@@ -171,9 +207,28 @@ class _MyLogInPageState extends State<MyLogInPage> {
                                   ),
                                 ),
                               ),
-                              const SizedBox(
-                                height: 20,
+                              Container(
+                                width: MediaQuery.of(context).size.width,
+                                alignment: Alignment.topRight,
+                                child: TextButton(
+                                  onPressed: () {
+                                    Navigator.pushReplacementNamed(
+                                        context, "/reset");
+                                  },
+                                  child: Text(
+                                    "Forget Password ? ",
+                                    textAlign: TextAlign.left,
+                                    style: TextStyle(
+                                      color: const Color(0xFF068FFF),
+                                      // color: Colors.black,
+                                      fontSize: 12,
+                                    ),
+                                  ),
+                                ),
                               ),
+                              // const SizedBox(
+                              //   height: 20,
+                              // ),
                               SizedBox(
                                 width: double.infinity,
                                 height: 50,
@@ -201,37 +256,40 @@ class _MyLogInPageState extends State<MyLogInPage> {
                                           password: passwordcontroller.text,
                                         );
                                         print(currentUser.user!);
-                                        if (currentUser.user!.uid != null) {
-                                          SharedPreferences prefs =
-                                              await SharedPreferences
-                                                  .getInstance();
+                                        // Nneed
+                                        setState(() {
+                                          checkEmail();
+                                        });
+                                        // need
+                                        // if (currentUser.user!.uid != null) {
+                                        //   SharedPreferences prefs =
+                                        //       await SharedPreferences
+                                        //           .getInstance();
 
-                                          prefs.setString(
-                                            'password',
-                                            passwordcontroller.text,
-                                          );
-                                          prefs.setString(
-                                            'displayName',
-                                            "${currentUser.user!.displayName}",
-                                          );
-                                          prefs.setString(
-                                            'email',
-                                            usernamecontroller.text,
-                                          );
-                                          prefs.setInt('language', 1);
-                                          setState(() {
-                                            isloading = false;
-                                            usernamecontroller.clear();
-                                            passwordcontroller.clear();
-                                            mytime.cancel();
-                                            currentUser.user!.reload();
-                                            Navigator.pushReplacementNamed(
-                                                context, '/main');
-                                          });
-                                        }
-                                        // setState(() {
-                                        //   checkEmail();
-                                        // });
+                                        //   prefs.setString(
+                                        //     'password',
+                                        //     passwordcontroller.text,
+                                        //   );
+                                        //   prefs.setString(
+                                        //     'displayName',
+                                        //     "${currentUser.user!.displayName}",
+                                        //   );
+                                        //   prefs.setString(
+                                        //     'email',
+                                        //     usernamecontroller.text,
+                                        //   );
+                                        //   prefs.setInt('language', 1);
+                                        //   setState(() {
+                                        //     isloading = false;
+                                        //     usernamecontroller.clear();
+                                        //     passwordcontroller.clear();
+                                        //     mytime.cancel();
+                                        //     currentUser.user!.reload();
+                                        //     Navigator.pushReplacementNamed(
+                                        //         context, '/main');
+                                        //   });
+                                        // }
+                                        
                                       } on FirebaseException catch (e) {
                                         String errorMessage = "";
                                         String code = e.code;
@@ -278,9 +336,10 @@ class _MyLogInPageState extends State<MyLogInPage> {
                                     }
                                   },
                                   style: ElevatedButton.styleFrom(
-                                      // elevation: 0,
-                                      // primary: Colors.blue[700],
-                                      primary: Colors.black),
+                                    // elevation: 0,
+                                    // primary: Colors.blue[700],
+                                    primary: Colors.black,
+                                  ),
                                   child: isloading
                                       ? const SizedBox(
                                           width: 15,
